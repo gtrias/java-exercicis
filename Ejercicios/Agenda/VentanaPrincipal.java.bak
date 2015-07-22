@@ -1,0 +1,99 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+public class VentanaPrincipal extends Frame 
+{
+	Choice cLista;
+	Button bBorrar,bNuevo;
+	TextField tNombre,tDireccion,tEdad,tTelefono;
+	ColTPersona coleccion;
+	VentanaPrincipal(String titulo){
+		super(titulo);
+		coleccion = new ColTPersona();
+		setSize(400,200);
+		setLayout(new BorderLayout());
+
+		addWindowListener(new EventoVentana());
+
+		Panel pIzquierda = new Panel();
+		Panel pCentro = new Panel();
+		Panel pDerecha = new Panel();
+		pIzquierda.setLayout(new GridLayout(6,1));
+		pCentro.setLayout(new GridLayout(6,1));
+		pDerecha.setLayout(new FlowLayout());
+
+		pIzquierda.add(new Label("Seleccionar"));
+		pIzquierda.add(new Label(""));
+		pIzquierda.add(new Label("Nombre"));
+		pIzquierda.add(new Label("Direccion"));
+		pIzquierda.add(new Label("Edad"));
+		pIzquierda.add(new Label("Telefono"));
+
+		cLista = new Choice();
+		cLista.addItemListener(new ControlSeleccion());
+
+		actualizarLista();
+
+		pCentro.add(cLista);
+		pCentro.add(new Label("Datos del contacto"));
+		pCentro.add(tNombre = new TextField());
+		pCentro.add(tDireccion = new TextField());
+		pCentro.add(tEdad = new TextField());
+		pCentro.add(tTelefono = new TextField());
+
+		bBorrar = new Button("Borrar");
+		bBorrar.addActionListener(new controlBotones());
+		bNuevo = new Button("Nuevo");
+		bNuevo.addActionListener(new controlBotones());
+		pDerecha.add(bBorrar);
+		pDerecha.add(bNuevo);
+
+		add("Center", pCentro);
+		add("West",pIzquierda);
+		add("East",pDerecha);
+
+		pack();
+	}
+
+	public class EventoVentana extends WindowAdapter
+	{
+		public void windowClosing(WindowEvent we) { System.exit(0); }
+	}
+	public class ControlSeleccion implements ItemListener{
+		public void itemStateChanged(ItemEvent e){
+			mostrarContacto(cLista.getSelectedIndex());
+		}
+		public void mostrarContacto(int pos){
+			TPersona persona = coleccion.obtenPersona(pos);
+			tNombre.setText(persona.obtenerNombre());
+			tDireccion.setText(persona.obtenerDireccion());
+			tEdad.setText(persona.obtenerEdad());
+			tTelefono.setText(persona.obtenerTelefono());
+		}
+	}
+	public class controlBotones implements ActionListener{
+		public void actionPerformed(ActionEvent ae){
+			int registro = cLista.getSelectedIndex();
+			if(ae.getSource() == bBorrar)
+				coleccion.borrarPersona(registro);
+				tNombre.setText("");
+				tDireccion.setText("");
+				tEdad.setText("");
+				tTelefono.setText("");
+				actualizarLista();
+		}
+	}
+	public void actualizarLista(){
+		cLista.removeAll();
+		
+		int tamano = coleccion.tamano();
+		for(int i=0; i<tamano; i++){
+			TPersona pers = coleccion.obtenPersona(i);
+			cLista.addItem(pers.obtenerNombre());
+		}
+	}
+	public class VentanaConfirmacion extends Dialog
+	{
+	}
+}
+ 

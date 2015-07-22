@@ -1,0 +1,2 @@
+for(ennumeration e=v.elements(); e.hasElement(); e.nextr())
+	if/e.getNombre().equals("pepe")(

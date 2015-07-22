@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launchConfiguration type="net.sourceforge.phpdt.launching.LaunchConfigurationTypePHPApplication">
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.PROJECT_NAME" value="prueba"/>
+  <booleanAttribute key="net.sourceforge.phpeclipse.launching.REMOTE_DEBUG" value="false"/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.FILE_NAME" value="index.php"/>
+  <booleanAttribute key="net.sourceforge.phpeclipse.launching.OPEN_DBGSESSION_IN_EXTERNAL_BROWSER" value="false"/>
+  <booleanAttribute key="net.sourceforge.phpeclipse.launching.OPEN_DBGSESSION_IN_BROWSER" value="true"/>
+  <stringAttribute key="org.eclipse.debug.core.source_locator_id" value="net.sourceforge.phpdt.debug.ui.PHPSourceLocator"/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.WORKING_DIRECTORY" value="/media/ARCHIVOS/DATOS/PROGRAMACION/PROYECTO ANALISIS/Gestion MAKRO"/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.REMOTE_PATH" value="/prueba"/>
+  <booleanAttribute key="net.sourceforge.phpeclipse.launching.REMOTE_DEBUG_TRANSLATE" value="false"/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.SELECTED_INTERPRETER" value=""/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.INTERPRETER_ARGUMENTS" value=""/>
+  <booleanAttribute key="net.sourceforge.phpeclipse.launching.USE_DEFAULT_WORKING_DIRECTORY" value="true"/>
+  <stringAttribute key="net.sourceforge.phpeclipse.launching.PROGRAM_ARGUMENTS" value=""/>
+  <booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+</launchConfiguration>

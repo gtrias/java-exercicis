@@ -1,0 +1,123 @@
+import java.awt.*;
+import java.awt.event.*;
+public class VentanaEj1 extends Frame{
+		public TextField tF1,tF2,tF3;
+		public Button bValidar;
+		public Label label1;
+		public Label label2;
+
+		VentanaEj1(String titulo){
+			super(titulo);
+			addWindowListener(new EventoVentana());
+			Panel arriba = new Panel();
+			Panel textos = new Panel();
+			Panel validar = new Panel();
+			Panel abajo = new Panel();
+			Panel labels = new Panel();
+			Panel selecciones = new Panel();
+			textos.setLayout(new GridLayout(3,1));
+			arriba.setLayout(new BorderLayout());
+			abajo.setLayout(new BorderLayout());
+			labels.setLayout(new GridLayout(2,1));
+			selecciones.setLayout(new BorderLayout());
+			validar.setLayout(new GridLayout(2,1));
+
+			tF1= new TextField("una");
+			tF2= new TextField("nueva");
+			tF3= new TextField("ventana");
+			bValidar = new Button("Validar");
+
+			validar.add(bValidar);
+			Panel cuadrado=new Panel();
+			cuadrado.setBackground(new Color(0));
+			validar.add(cuadrado);
+			textos.add(tF1);
+			textos.add(tF2);
+			textos.add(tF3);
+			arriba.add("Center",textos);
+			arriba.add("East",validar);
+
+			label1 = new Label("label 1");
+			labels.add(label1);
+			label2 = new Label("label 2");
+			labels.add(label2);
+
+			CheckboxGroup grupo = new CheckboxGroup();
+			Checkbox opcion1 = new Checkbox("grupo opcion 1");
+			opcion1.setCheckboxGroup(grupo);
+			Checkbox opcion2 = new Checkbox("grupo opcion 2");
+			opcion2.setCheckboxGroup(grupo);
+			
+			selecciones.add("West",opcion1 );
+			selecciones.add("West",opcion2 );
+
+			
+			abajo.add("North",labels);
+			abajo.add("South",selecciones);
+
+			setLayout(new BorderLayout());
+			add("North",arriba);
+			add("Center",abajo);
+
+			tF1.addActionListener(new ControlFoco());
+			tF2.addActionListener(new ControlFoco());
+			tF3.addActionListener(new ControlFoco());
+			bValidar.addActionListener(new ControlFoco());
+			bValidar.addKeyListener(new ControlTeclas());
+			cuadrado.addMouseListener(new ControlRaton());
+		}
+
+		public class EventoVentana extends WindowAdapter
+		{
+			public void windowClosing(WindowEvent we) { System.exit(0); }
+		}
+		
+		public class ControlFoco implements ActionListener
+		{
+			public void actionPerformed(ActionEvent e){
+				if(e.getSource() == tF1)
+					tF2.requestFocus();
+				if(e.getSource() == tF2)
+					tF3.requestFocus();
+				if(e.getSource() == tF3)
+					bValidar.requestFocus();
+				if(e.getSource() == bValidar)
+					label1.setText(tF1.getText() + " " + tF2.getText() + " " + tF3.getText());
+			}
+		}
+		public class ControlTeclas implements KeyListener{
+			public void keyPressed(KeyEvent e){
+				String texto = new String();
+				texto.charAt(e.getKeyCode());
+				tF1.setText(texto);
+			}
+			public void keyReleased(KeyEvent e){
+
+			}
+			public void keyTyped(KeyEvent e){
+				
+			}
+
+		}
+		public class ControlRaton implements MouseListener
+		{
+			public void mouseReleased(MouseEvent e){}
+			public void mouseClicked(MouseEvent e){
+				if(e.getButton()==MouseEvent.BUTTON1)
+					label2.setText("Clic con el boton izquierdo");
+				if(e.getButton()==MouseEvent.BUTTON2)
+					label2.setText("Clic con el boton del medio");
+				else
+					label2.setText("Clic con el boton derecho");
+			}
+			public void mousePressed(MouseEvent e){}
+			public void mouseEntered(MouseEvent e){}
+			public void mouseExited(MouseEvent e){}
+			public void mouseMoved(MouseEvent e){
+				label2.setText("coordenada x: "+ e.getX()+ " coordenada y: " + e.getY());
+			}
+
+
+		}
+
+}

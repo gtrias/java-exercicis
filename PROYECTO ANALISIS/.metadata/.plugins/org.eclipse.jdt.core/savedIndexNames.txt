@@ -1,0 +1,3 @@
+/media/ARCHIVOS/DATOS/PROGRAMACION/PROYECTO ANALISIS/.metadata/.plugins/org.eclipse.jdt.core/4125268007.index
+/media/ARCHIVOS/DATOS/PROGRAMACION/PROYECTO ANALISIS/.metadata/.plugins/org.eclipse.jdt.core/2143325160.index
+/media/ARCHIVOS/DATOS/PROGRAMACION/PROYECTO ANALISIS/.metadata/.plugins/org.eclipse.jdt.core/383925538.index
