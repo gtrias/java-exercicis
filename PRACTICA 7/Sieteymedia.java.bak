@@ -1,0 +1,24 @@
+public class Sieteymedia{
+	public static void main(String[] args){ 
+		Baraja baraja = new Baraja();
+		boolean jugar = true;
+		int puntosMaquina=0;
+		int puntosJugador=0;
+		int opcion;
+		do{ 
+			if (puntosJugador != 0)
+			{
+				System.out.println("Que deseas hacer?:"); 
+				System.out.println("1.- Cojer carta");
+				System.out.println("2.- Plantarse: ");
+				opcion = EntradaConsola.leeEntero();
+				if (opcion == 1)
+				{
+					System.out.println("Has sacado" + baraja.sacaCarta());
+				}
+				jugar = false;	
+			}                                                                       
+		}while(jugar == true);
+	}	
+	
+}

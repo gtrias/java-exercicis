@@ -1,0 +1,17 @@
+public class  Triangulo
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Cuantos asteriscos tendrá de base?  :  ");
+		int n=EntradaConsola.leeEntero();
+		int x=1;
+		System.out.println("---------------------");
+		do{
+			for(int i=0;i<x+1;i++){
+				System.out.print("*");
+			}
+			x++;
+			System.out.println("");
+		}while(x<n);
+	}
+}

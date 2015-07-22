@@ -1,0 +1,18 @@
+! ** JCreator Workspace File (C)2000
+! ********** DO NOT EDIT *********
+
+VERSION := "1.00"
+LABEL := "Bombo"
+
+! Start Project Structure
+#[BeginProject]SOURCE := "\\Bombo.jcp" #[EndProject]
+
+! Start Last Document Structure
+#[BeginFile]SOURCE := "\\Bombo.java" #[EndFile]
+#[BeginFile]SOURCE := "\\Bonoloto.java" #[EndFile]
+#[BeginFile]SOURCE := "\\SerVivo.java" #[EndFile]
+#[BeginFile]SOURCE := "\\Animales.java" #[EndFile]
+#[BeginFile]SOURCE := "\\Vegetales.java" #[EndFile]
+
+! Start Breakpoint Structure
+

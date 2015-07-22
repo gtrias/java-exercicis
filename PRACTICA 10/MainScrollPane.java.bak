@@ -1,0 +1,7 @@
+class  MainScrollPane
+{
+	public static void main(String[] args) 
+	{
+		 GuiScrollPane panel = new GuiScrollPane();
+	}
+}
