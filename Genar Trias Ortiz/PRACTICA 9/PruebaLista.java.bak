@@ -1,0 +1,27 @@
+
+public class PruebaLista {
+
+	public static void main(String[] args) {
+		protected Lista lista;
+		protected String prueba1;
+		protected String prueba2;
+		protected String prueba3;
+		lista = new Lista();
+		prueba1 = "Esta es la prueba 1";
+		prueba2 = "Esta es la prueba 2";
+		prueba3 = "Esta es la prueba 3";
+		
+		if (lista.estaVacia() == true)
+			System.out.println("La lista esta vacia");
+		
+		lista.ponPrimero(prueba1);
+		lista.ponPrimero(prueba2);
+		lista.ponPrimero(prueba3);
+		lista.extraeUltimo();
+		lista.extraePrimero();
+		lista.ponUltimo(prueba3);
+		lista.ponUltimo(prueba2);
+		
+	}
+
+}
